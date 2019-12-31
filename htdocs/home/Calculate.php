@@ -25,8 +25,9 @@
     $category = "痩せすぎ";
   }
 
-  echo "<p>あなたのBMIは $bmi です</p>";
-  echo "<p>肥満度は $category です</p>";
+  // View
+  include('ShowResult.php');
 ?>
+<a href="http://localhost:8888/home/hello.php">ホームに戻る</a>
 </body>
 </html>
