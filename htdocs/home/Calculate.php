@@ -2,10 +2,16 @@
 <html>
 <body>
 <?php
+  //セッションスタート（必ずphpファイルの先頭に書く）
+  session_start();
   // データの受け取り
   $name = $_GET['name'];
   $height = $_GET['height'];
   $weight = $_GET['weight'];
+  // 結果をセッションにぶち込む
+  $_SESSION['name'] = $name;
+  $_SESSION['height'] = $height;
+  $_SESSION['weight'] = $weight;
 
   // 肥満指数（BMI）＝　体重 kg ÷ (身長 m ×身長 m）
   $height = $height * 0.01;
@@ -27,7 +33,11 @@
 
   // View
   include('ShowResult.php');
+
 ?>
+<a href="http://localhost:8888/home/SaveResult.php">結果を保存する</a>
 <a href="http://localhost:8888/home/hello.php">ホームに戻る</a>
+<body>
+</html>
 </body>
 </html>
